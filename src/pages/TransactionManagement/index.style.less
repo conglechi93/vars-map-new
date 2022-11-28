@@ -1,0 +1,409 @@
+@import '@shared/styles/variable';
+@import '@shared/styles/utils';
+
+.card-form {
+  border-radius: 16px;
+  padding: 30px 60px;
+  background-color: #ffff;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 8px rgba(17, 16, 16, 0.16);
+}
+
+.card-confirm {
+
+  justify-content: center;
+  text-align: center;
+
+  display: flex;
+}
+.card-confirm-info {
+  border-radius: 16px;
+  padding: 30px 60px;
+  box-shadow: 0px 0px 8px rgba(17, 16, 16, 0.16);
+  width: 50%;
+  background-color: #ffff;
+}
+.card-confirm-qr {
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+.card-wallet {
+  padding: 14px;
+  margin: 20px auto;
+  text-align: left;
+  background-color: #f9f9f9;
+  border: 0.5px solid #BDBDBD;
+  border-radius: 12px;
+}
+
+.balance-text {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.balance-text {
+  font-weight: 600;
+  font-size: 17px;
+}
+.card-info {
+  .card-info-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}
+
+.form-btn {
+  display: flex;
+  position: left;
+  float: right;
+  .form-btn-field {
+    min-width: 100px;
+    margin: 10px;
+    .cancle-btn {
+      color: #d10404;
+      background-color: #fff;
+    }
+  }
+}
+
+.trasaction-text {
+  height: 40px;
+  padding: 3px 0px;
+}
+
+.trasaction-text-label {
+  font-weight: 800;
+  font-size: 23px;
+  margin-top: 20px;
+}
+
+.trasaction-form {
+  display: flex;
+  justify-content: space-between; 
+}
+
+
+.form-money {
+  width: 45%;
+  padding: 20px 0;
+}
+
+.trasaction-form input {
+  width: 100%;
+}
+
+.trasaction-form-note {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.trasaction-bank-list {
+  justify-content: center;
+  margin-top: 10px;
+  display: flex;
+}
+
+.bank-list-radio {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  ul {
+    list-style: none;
+  }
+  li {  
+    height: 60px;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    margin: 0px 10px;
+  }
+  input {
+    visibility:hidden;
+  }
+  label {
+    cursor: pointer;
+    box-shadow: 0px 0px 8px rgba(17, 16, 16, 0.16);
+    padding: 18px 120px;
+    min-width: 33%;;
+    background-color: #FFFFFF;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+  }
+  input:checked + label {
+    border: solid 0.5px #D1132A;
+  }
+}
+
+.info-row {
+  width: 100%;
+  display: flex;
+  padding: 12px 0px;
+  justify-content: space-between;
+}
+
+.qr-code {
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+}
+
+.row-label {
+  text-align: left;
+  width: 35%;
+}
+
+.row-content-end {
+  width: 65%;
+  text-align: right;
+}
+
+.text-bold {
+  font-weight: 700;
+  @media screen and (max-width: @screen-md) {
+    height: 60px;
+  }
+}
+
+
+.transaction-note {
+  border-radius: 8px;
+}
+
+
+.warning-text {
+  color: #d10404;
+  margin-top: 5px;
+}
+
+// TRANSACTION TRANSFER 
+
+.transfer-row {
+  margin-top: 10px;
+}
+
+.transfer-radio {
+  margin-top: 30px;
+  text-align: center;
+  ul {
+    list-style: none;
+  }
+  li {  
+    min-width: 8%;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  input {
+    visibility:hidden;
+  }
+  label {
+    cursor: pointer;
+    border: 1px solid #BDBDBD;
+    padding: 10px;
+    border-radius: 7px;
+  }
+  input:checked + label {
+    background: #D1132A;
+    color: #f7f7f7;
+  }
+}
+
+.image-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 50%;
+}
+
+.suggest-wallet-form {
+  display: flex;
+  margin: 10px 0px;
+  width: 100%;
+  border: #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+.suggest-wallet-form:hover {
+  background-color: #DBDBDB;
+}
+
+.suggest-wallet-row {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.padding-middle {
+  width: 100%;
+  height: 0.5px;
+  border: 0.5px solid #BDBDBD;
+}
+
+.suggest-phone{
+  text-align: center;
+}
+
+.mode-name-text {
+  background-color: #6C6868;
+  color: #FFFFFF;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  border: 0.5px solid #BDBDBD;
+  padding: 2px;
+}
+
+.wallet-form {
+  background:  #f5f5f5;
+  display: flex;
+}
+
+.wallet-collum-left {
+  padding: 6px;
+  width: 50%;
+  border: solid 0.5px #BDBDBD;
+  border-radius: 0px 8px 8px 0px;
+  text-align: center;
+}
+
+.wallet-collum-right {
+  padding: 6px;
+  width: 50%;
+  border: solid 0.5px #BDBDBD;
+  border-radius: 8px 0px 0px 8px;
+  text-align: center;
+}
+
+.card-text-label {
+  margin: 20px;
+  font-weight: 800;
+  font-size: 23px;
+}
+
+.form-btn {
+  display: flex;
+  position: left;
+  float: right;
+  .form-btn-field {
+    min-width: 100px;
+    margin: 10px;
+    .cancle-btn {
+      color: #d10404;
+      background-color: #fff;
+    }
+  }
+}
+
+.ico-avatar {
+  font-size: 24px;
+  background-color: @grey-100;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% 50%;
+  margin: 10px ;
+
+}
+
+.transfer-recent-transfer {
+ display: flex;
+}
+
+.bank-info {
+  margin: 20px 0;
+}
+  
+.transaction-form {
+  border-radius: 20px;
+  padding: 10px 24px;
+  gap: 24px;
+  background-color: #ffff;
+  margin: 30px 0px;
+  box-shadow: 0px 0px 8px rgba(17, 16, 16, 0.16);
+}
+
+.transfer-text-label{
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.transaction-form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transaction-form-column {
+  width: 48%;
+}
+
+.right-btn {
+  text-align: right;
+}
+
+.confirm-form-btn {
+  display: flex;
+  justify-content: right;
+}
+
+.confirm-btn {
+  margin-left: 10px;
+}
+
+.note-text {
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-style: normal;
+  height: 50px;
+}
+
+
+.trasaction-note {
+  margin-top: -20px;
+}
+
+.contact-text-confirm {
+  font-weight: 500;
+  color: #046CFC;
+  margin-top: -2px;
+}
+.transaction-btn-save {
+  background: #3789FD;
+  border-radius: 6px;
+  border: none;
+  margin-top: 20px;
+}
+
+.transaction-btn-save:hover {
+  background: #3789FD;
+  border-radius: 6px;
+  border: none;
+  margin-top: 20px;
+}
+
+.save-text {
+  color: #f7f7f7;
+  font-weight: normal;
+}
+
+.card-img {
+  min-width: 340px;
+  min-height: 235px;
+}
+
+.ant-pagination li {
+  border-radius: 50%;
+}
+
+.search-btn {
+  color: #FFFFFF;
+}
