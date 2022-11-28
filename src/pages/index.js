@@ -7,6 +7,7 @@ import { ERROR_404_ROUTE } from './errorPages/declareRoute';
 import Intermediate from './Intermediate';
 import profileConfig from './ProfileManagement';
 import { authorize } from './Home';
+import mapConfig from './Map';
 import employeeConfig from './EmployeeManagement';
 import enterpriseConfig from './EnterpriseManagement';
 import memberConfig from './MembersVARSManagement';
@@ -22,13 +23,13 @@ const authorizedStructure = {
       path: initialUrl,
       element: <Intermediate />,
     },
-    // ...applicationConfig.authorize,
     ...profileConfig.authorize,
     ...enterpriseConfig.authorize,
     ...memberConfig.authorize,
     ...transactionConfig.authorize,
     ...enterpriseMemberConfig.authorize,
-    ...employeeConfig.authorize
+    ...employeeConfig.authorize,
+    ...mapConfig.authorize
   ],
 };
 
