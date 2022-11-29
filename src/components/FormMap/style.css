@@ -1,0 +1,116 @@
+.form_place{
+    width: 220px;
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.input_tothua{
+    outline: none;
+    border-radius: 4px;
+    height: 38px;
+    border: 1px solid #e2e8f0;
+    padding-left: 9px;
+    margin-top: 5px;
+    width: 100%;
+  }
+.text-white{
+    background: rgb(209, 19, 42);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    height: 30px;
+   
+}
+.style_button_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15px;
+}
+.header_form_map{
+    height: 50px;
+    background-color: #D1132A;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    display: flex;
+    justify-content: space-around
+}
+.form_search{
+    padding: 15px;
+}
+.select_form_search{
+    margin-top: 5px;
+}
+.icon_form_map{
+    border-radius: 15px;
+    padding: 10px;
+}
+.title_form_map{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center
+}
+.icon_close_form_map{
+margin-top: 5px;
+color: white;
+}
+.form_place_angular{
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px;
+}
+.upload-files-container{
+    border: 2px dashed #D42136;
+	border-radius: 7px;
+	margin: 10px 10px 15px 10px;
+	padding: 5px 50px;
+	text-align: center;
+    position: relative;
+}
+.fileUploaderContainer [type="file"] {
+    display: block;
+    top:0;
+    right: 0;
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: pointer;
+  }
+  .icon_upload_form_map{
+    font-size: 50px;
+    color: #81B5FE;
+  }
+  .btn_scan{
+    text-align: center;
+  }
+  .input_condinates{
+    outline: none;
+    border-radius: 4px;
+    height: 38px;
+    border: 1px solid #e2e8f0;
+    margin-top: 5px;
+    width: 48%;
+    text-align: center;
+  }
+  .box_input_condinates{
+    display:flex;
+    justify-content: space-between;
+  }
+  .add_element_condinates{
+    color: #D42136;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+  .are_form_map{
+    display: flex;
+  }
+ 
