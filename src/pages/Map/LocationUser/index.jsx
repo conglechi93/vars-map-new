@@ -11,9 +11,9 @@ function locationUser(map) {
   firstChild.style.borderRadius = '2px';
   firstChild.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
   firstChild.style.cursor = 'pointer';
-  firstChild.style.marginRight = '30px';
+  firstChild.style.marginRight = '10px';
   firstChild.style.borderRadius = '7px';
-  firstChild.style.marginBottom = '35px';
+//   firstChild.style.marginBottom = '35px';
   firstChild.style.display = 'flex';
   firstChild.style.justifyContent = 'center';
   firstChild.style.alignItems = 'center';
