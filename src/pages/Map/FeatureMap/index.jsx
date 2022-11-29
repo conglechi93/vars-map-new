@@ -3,10 +3,13 @@ import './style.css';
 import logo from './logo.svg';
 import {SearchOutlined} from '@ant-design/icons';
 import {Slider} from 'antd';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import FormSearchMap from 'components/FormMapSearch';
+// import { useState } from 'react';
 
 const HeaderMap = () => {
+    // const [isOpen,setIsOpen] = useState(false)
+    // console.log("🚀 ~ file: index.jsx ~ line 13 ~ HeaderMap ~ setIsOpen", setIsOpen)
+    
   const TypeIcon = [
     {
       id: 1,
@@ -97,8 +100,11 @@ const HeaderMap = () => {
               })}
             </div>
 
-            <div className='slider' >
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG1SURBVHgBnVXBUcMwEDwbF+BUgOkgVIDdAR0kdAD/TBzP5A9UkLiDpAJMB6GCmAowP14xe2SdEYrsONmZG8m629OeZEkiPTHb46VvfCD9EcHqvsG++QFFkVwIm+tbjm2WZamLWNf1Bvbh8pGznc/n183YVdMpiqKK49jTOZIk0e93Y9LQ87xKDTEVfD9mUkw40+50Ol03454cl6RBIzQ3rGIBi62wpSaCv4Rt0c/Jk9bEhpIRlOhfEBrDaybV0oeoYJymae7i+65BVepIqviCbwW71bk1pm3DnYmpKJQOsPSN7JfqdGLdKDRj6YcMFpPzDwEGnxt1WLPWX6oFJdsIe3IH7pB5SlX83UTtdjvdzErOR0juHzDBILB/E1dZHRiy3UBxYTpca6yKC+kH3eQlOdKZmHiQE0vCY6yKM5e/9YBAxRjNYWOJFeyVSjXpE+KWLr7vUqLHlAQ9CObJuoe9sX+rMRrrurh8OykvlJyqSyofwBJONMBYoj7ScuXYyQ9L0Vybsr9cZrYC3AmPnPzoFWF8GgRBNJlMPsUREEkLWPaiwx+Z3/YLUsqFsLnnvHmVnHEqfwF5sNSCLHdEfQAAAABJRU5ErkJggg==" alt="" />
+            <div className='slider'>
+              <img
+                src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG1SURBVHgBnVXBUcMwEDwbF+BUgOkgVIDdAR0kdAD/TBzP5A9UkLiDpAJMB6GCmAowP14xe2SdEYrsONmZG8m629OeZEkiPTHb46VvfCD9EcHqvsG++QFFkVwIm+tbjm2WZamLWNf1Bvbh8pGznc/n183YVdMpiqKK49jTOZIk0e93Y9LQ87xKDTEVfD9mUkw40+50Ol03454cl6RBIzQ3rGIBi62wpSaCv4Rt0c/Jk9bEhpIRlOhfEBrDaybV0oeoYJymae7i+65BVepIqviCbwW71bk1pm3DnYmpKJQOsPSN7JfqdGLdKDRj6YcMFpPzDwEGnxt1WLPWX6oFJdsIe3IH7pB5SlX83UTtdjvdzErOR0juHzDBILB/E1dZHRiy3UBxYTpca6yKC+kH3eQlOdKZmHiQE0vCY6yKM5e/9YBAxRjNYWOJFeyVSjXpE+KWLr7vUqLHlAQ9CObJuoe9sX+rMRrrurh8OykvlJyqSyofwBJONMBYoj7ScuXYyQ9L0Vybsr9cZrYC3AmPnPzoFWF8GgRBNJlMPsUREEkLWPaiwx+Z3/YLUsqFsLnnvHmVnHEqfwF5sNSCLHdEfQAAAABJRU5ErkJggg=='
+                alt=''
+              />
               <Slider
                 style={{width: '100%'}}
                 trackStyle={{background: '#D1132A'}}
@@ -109,6 +115,9 @@ const HeaderMap = () => {
           </div>
         </div>
       </div>
+      <FormSearchMap>
+        {/* <div>search</div> */}
+      </FormSearchMap>
       <MapPage />
     </>
   );

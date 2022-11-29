@@ -1,0 +1,34 @@
+.form_place{
+    width: 220px;
+    position: absolute;
+    top: 40px;
+    z-index: 99;
+}
+.form_map_component{
+    background: white;
+    height: 300px;
+    width: 400%;
+    border-radius: 7px;
+
+}
+.text-white{
+    background: rgb(209, 19, 42);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    height: 30px;
+   
+}
+.style_button_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+.header_form_map{
+    height: 50px;
+    background-color: #D1132A;
+    border-radius: 5px;
+}
