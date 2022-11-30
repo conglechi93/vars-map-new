@@ -11,7 +11,11 @@ import storage from 'redux-persist/lib/storage';
 import {persistReducer} from 'redux-persist';
 import User from './User';
 import Enterprise from './Enterprise';
-import Transaction from './Transaction'
+import Transaction from './Transaction';
+import proviceReducer from './PlaceFormMapReducer';
+import proviceSelectReducer from './ProviceFormSelectReducer';
+import districtReducer from './DistrictReducer'
+import wardReducer from './WardReducer'
 
 const persistConfig = {
   key: 'default',
@@ -51,5 +55,9 @@ const reducers = (history) =>
     user: User,
     enterprise: Enterprise, 
     transaction: Transaction,
+    provice: proviceReducer,
+    district: districtReducer,
+    ward: wardReducer,
+    proviceSelect: proviceSelectReducer
   });
 export default reducers;
