@@ -1,7 +1,7 @@
 import {CloseCircleOutlined} from '@ant-design/icons';
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { setCityAction } from '../../redux/actions/InfoProvice';
+import { setCityAction,setDistrictAction  } from '../../redux/actions/InfoProvice';
 
 function PlaceForm() {
    const dispatch = useDispatch()
@@ -11,24 +11,27 @@ function PlaceForm() {
   
   const [valueCity, setValueCity] = useState(null);
  
+  const [valueDistrict, setValueDistrict] = useState(null);
+  // console.log("🚀 ~ file: placeForm.jsx ~ line 14 ~ PlaceForm ~ valueDistrict", valueDistrict)
+
+  // const [valueWard, setValueWard] = useState(null);
     
   useEffect(()=>{
     dispatch(setCityAction(valueCity))
   },[valueCity])
+  useEffect(()=>{
+    dispatch(setDistrictAction(valueDistrict))
+  },[valueDistrict])
 
-  // const [valueDistrict, setValueDistrict] = useState(null);
-  // console.log("🚀 ~ file: placeForm.jsx ~ line 14 ~ PlaceForm ~ valueDistrict", valueDistrict)
-
-  // const [valueWard, setValueWard] = useState(null);
 
 
   const onChangeSelectCity = (e) => {
     setValueCity(e.target.value);
 
   };
-  // const onChangeSelectDistrict = (e) => {
-  //   setValueDistrict(e.target.value);
-  // };
+  const onChangeSelectDistrict = (e) => {
+    setValueDistrict(e.target.value);
+  };
   // const onChangeSelectWard = (e) => {
   //   setValueWard(e.target.value);
   // };
@@ -79,7 +82,7 @@ function PlaceForm() {
               </select>
               <select
                 className='input_tothua'
-                // onChange={onChangeSelectDistrict}
+                onChange={onChangeSelectDistrict}
                 >
                 <option>Quận/Huyện</option>
                 

@@ -12,12 +12,13 @@ import CoordinantesForm from 'components/FormMap/coordinatesForm';
 import TypeMap from 'components/FormMap/typeMap';
 import LayerMap from 'components/FormMap/layerMap';
 import {useDispatch,useSelector} from 'react-redux';
-import {cityAction,districtAction} from 'redux/actions/ProviceAction';
+import {cityAction,districtAction,wardAction} from 'redux/actions/ProviceAction';
 import {useEffect} from 'react';
 
 const HeaderMap = () => {
   const dispatch = useDispatch();
    const codeCity = useSelector((state)=> state.proviceSelect)
+   const codeDistrict= useSelector((state)=> state.districtSelect)
 
   useEffect(() => {
     dispatch(cityAction());
@@ -25,6 +26,9 @@ const HeaderMap = () => {
   useEffect(() => {
     dispatch(districtAction({codeCity}))
   }, [codeCity]);
+  useEffect(() => {
+    dispatch(wardAction({codeCity,codeDistrict}))
+  }, [codeDistrict]);
 
   const placeForm = () => {
     return <PlaceForm className='drop_tothua'></PlaceForm>;

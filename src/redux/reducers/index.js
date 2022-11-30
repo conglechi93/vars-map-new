@@ -14,8 +14,9 @@ import Enterprise from './Enterprise';
 import Transaction from './Transaction';
 import proviceReducer from './PlaceFormMapReducer';
 import proviceSelectReducer from './ProviceFormSelectReducer';
-import districtReducer from './DistrictReducer'
-import wardReducer from './WardReducer'
+import districtReducer from './DistrictReducer';
+import wardReducer from './WardReducer';
+import districtSelectReducer from './DistrictSelectReducer'
 
 const persistConfig = {
   key: 'default',
@@ -58,6 +59,7 @@ const reducers = (history) =>
     provice: proviceReducer,
     district: districtReducer,
     ward: wardReducer,
-    proviceSelect: proviceSelectReducer
+    proviceSelect: proviceSelectReducer,
+    districtSelect: districtSelectReducer
   });
 export default reducers;

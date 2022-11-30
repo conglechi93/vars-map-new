@@ -29,9 +29,9 @@ export const districtAction = ({codeCity}) => {
       });
   };
 };
-export const wardAction = () => {
+export const wardAction = ({codeCity,codeDistrict }) => {
   return (dispatch) => {
-    API.get(`http://192.168.1.26:8500/vcat/provinces`)
+    API.get(`http://192.168.1.26:8500/vcat/provinces/${codeCity}/districts/${codeDistrict}/wards`)
       .then((data) => {
         const places = data;
         dispatch({type: WARD_SET, payload: {places}});
