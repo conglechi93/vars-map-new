@@ -6,7 +6,7 @@ import {
   setDistrictAction,
 } from '../../redux/actions/InfoProvice';
 import {landPlotAction} from 'redux/actions/LandPlot';
-import './style.css'
+import './style.css';
 // import ValidateLandPlot from '../ValidateFormMap/ValidateFormLandPlot';
 // import useMarkerLandPlot from '../Marker/markerLandPlot'
 
@@ -189,6 +189,7 @@ function PlaceForm() {
   };
   return (
     <>
+  
       {
         <div style={{width: '100%'}}>
           {
@@ -228,7 +229,7 @@ function PlaceForm() {
                       placeholder='Nhập số thửa'
                     />
                     <select
-                      className='input_tothua'
+                      className='input_tothua_select'
                       onChange={onChangeSelectCity}>
                       <option>Tỉnh/Thành</option>
                       {cityOption.map((item) => {
@@ -240,7 +241,7 @@ function PlaceForm() {
                       })}
                     </select>
                     <select
-                      className='input_tothua'
+                      className='input_tothua_select'
                       onChange={onChangeSelectDistrict}>
                       <option>Quận/Huyện</option>
 
@@ -255,7 +256,7 @@ function PlaceForm() {
                         })}
                     </select>
                     <select
-                      className='input_tothua'
+                      className='input_tothua_select'
                       onChange={onChangeSelectWard}>
                       <option>Phường/Xã</option>
                       {valueCity != null &&

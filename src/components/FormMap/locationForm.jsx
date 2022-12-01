@@ -57,11 +57,11 @@ function LocationForm() {
       <form
         // onSubmit={onSubmit}
         style={{ width: "220px" }}
-        className="w-11/12 mx-auto mt-1 bg-gray-100 border-2 rounded md:w-2/3 sm:w-3/4 lg:w-1/2 xl:w-1/3 form_place"
+        className="w-11/12 mx-auto bg-gray-100 border-2 rounded md:w-2/3 sm:w-3/4 lg:w-1/2 xl:w-1/3 form_place"
       >
         <div className="flex flex-col gap-5 form_search">
           <select
-                      className='input_tothua'
+                      className='input_tothua_select'
                       onChange={onChangeSelectCity}>
                       <option>Tỉnh/Thành</option>
                       {cityOption.map((item) => {
@@ -73,7 +73,7 @@ function LocationForm() {
                       })}
                     </select>
                     <select
-                      className='input_tothua'
+                      className='input_tothua_select'
                       onChange={onChangeSelectDistrict}>
                       <option>Quận/Huyện</option>
 
@@ -88,7 +88,7 @@ function LocationForm() {
                         })}
                     </select>
                     <select
-                      className='input_tothua'
+                      className='input_tothua_select'
                       onChange={onChangeSelectWard}>
                       <option>Phường/Xã</option>
                       {valueCity != null &&
@@ -105,12 +105,21 @@ function LocationForm() {
           <Select
             name="projectId"
             className="select_form_search"
-            // placeholder="Dự án"
+            placeholder="Dự án"
+            // options={projectOption}
+            // onChange={setSelectedProject}
+            // defaultValue={selectedProject}
+          />
+            <Select
+            name="projectId"
+            className="select_form_search"
+            placeholder="Năm quy hoạch"
             // options={projectOption}
             // onChange={setSelectedProject}
             // defaultValue={selectedProject}
           />
         </div>
+        
   
         <div className="style_button_form">
         <button

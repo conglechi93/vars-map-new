@@ -170,12 +170,17 @@ color: white;
     border: 1px solid;
   } */
   
-  .input_tothua{
+  .input_tothua_select{
     outline: none;
     border-radius: 4px;
     height: 38px;
     border: 1px solid #e2e8f0;
     padding-left: 9px;
+    appearance: none;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVHgB7c2xEYAgDEDRCA7AGlrJCGzgqG7gCFhp6wgsADGUekG08Gzy72hy5AVAkv6v4YbedKPWjblbjBGDDdt0nbeFOzsizHSORxEC/XHsJhTyph+UYlDCUgJnw7q8Alm0glXBE0rVsMdlND+QpG86ANAuKVsCb0SeAAAAAElFTkSuQmCC') no-repeat;
+    background-position: right 5px top 50%;
+    margin-top: 5px;
+    width: 100%;
   }
   .lable-cluster {
     color: red;

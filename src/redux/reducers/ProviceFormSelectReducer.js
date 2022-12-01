@@ -9,7 +9,6 @@ const proviceSelectReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case CITY_SET_SELECT:
           return action.payload.citySelect;
-    
         default:
           return state;
       }

@@ -14,8 +14,8 @@ function CoordinantesForm() {
       </div>
       <div className='form_place_angular'>
         <div className='are_form_map'>
-          <label htmlFor=''>Tọa độ</label>
-          <div></div>
+          <label htmlFor=''>Tọa độ :</label>
+          <input id="length" type="text" />
         </div>
         
       </div>

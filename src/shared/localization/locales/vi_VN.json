@@ -355,5 +355,7 @@
   "invites.notFound": "Không tìm thấy lời mời nào",
   "invites.notification": "Thông báo",
 
-  "navbar.enterpriseInfomation": "Thông tin doanh nghiệp"
+  "navbar.enterpriseInfomation": "Thông tin doanh nghiệp",
+
+  "common.landPlot": "Không tìm thấy số tờ, số thửa"
 }

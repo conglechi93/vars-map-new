@@ -194,6 +194,7 @@ const HeaderMap = () => {
                     className='dropdown_khuvuc'
                     overlay={item.component}
                     trigger='click'
+                 
                     // open={false}
                     // onOpenChange={setIsOpen(true)}
                     key={item.id}>

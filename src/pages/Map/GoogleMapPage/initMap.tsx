@@ -14,8 +14,17 @@ const initMap = (setDataSearchPlaces: any) => {
       mapId: "90f87356969d889c",
       fullscreenControl: false,
     });
+    map.addListener("click", (e:any) => {
+      
+      let outPutLatLang = document.getElementById('length') as HTMLInputElement
+      outPutLatLang = e.latLng.lat() && e.latLng.lng()
+      console.log("🚀 ~ file: initMap.tsx ~ line 21 ~ map.addListener ~ outPutLatLang.value", outPutLatLang)
+    })
     locationUser(map)
     searchBoxCustom(setDataSearchPlaces, map);
+
+
+    
     return map
 }
 export default initMap;
