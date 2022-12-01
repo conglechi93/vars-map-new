@@ -8,20 +8,12 @@ const searchBoxCustom = (setDataSearchPlaces:any,map: any) => {
   const input = document.getElementById("pac-input") as HTMLInputElement;
     const searchBox = new google.maps.places.SearchBox(input);
     // let markers: google.maps.Marker[] = [];
-    let infoWindow = new google.maps.InfoWindow();
+    // let infoWindow = new google.maps.InfoWindow();
     let dataPolygon: string[] = [];
     searchBox.addListener("places_changed", () => {
     displaySearchResults(map, searchBox);
   });
-    // axios
-    //   .get(`https://api.meeymap.com/map/v1/search?address=${keySearch.search}`)
-    //   .then((res: any) => {
-    //     // setDataSearch({ response: res.data });
-    //     dataPolygon.push(res);
-    //   })
-    //   .catch((error: any) => {
-    //     throw error;
-    //   });
+   
 const removePolygons = (bermudaTriangle: any) => {
     input.addEventListener("input", (e: any) => {
       if (e.target.value == 0) {
@@ -34,29 +26,23 @@ const removePolygons = (bermudaTriangle: any) => {
     const places = searchBox.getPlaces();
 
     return axios
-      .get(
-        `https://api.meeymap.com/city/v2/get-bound-district/${places[0].geometry.location.lat()}/${places[0].geometry.location.lng()}`
+      .get( `http://192.168.1.26:8500/vmap/places/getpolygon?lat=${places[0].geometry.location.lat()}&lng=${places[0].geometry.location.lng()}`
+        
       )
       .then((res: any) => {
-        // setDataSearch({ response: res.data });
-        const dataPolygonLatLngApiBro =
-          res.data.data.geoJson.geometry.coordinates.map((location: any) => {
-            return location[0];
+
+        const dataPolygonLatLngApiBro = res.data.data.coordinates.map((value: any) => {
+          const data = value.map((item: any) => {
+            return {
+              lat: item[1],
+              lng: item[0],
+            };
           });
-        const dataPolygonLatLngApiChir = dataPolygonLatLngApiBro.map(
-          (value: any) => {
-            const data = value.map((item: any) => {
-              return {
-                lat: item[1],
-                lng: item[0],
-              };
-            });
-            return data;
-          }
-        );
+          return data;
+        });
 
         var bermudaTriangle = new google.maps.Polygon({
-          paths: dataPolygonLatLngApiChir,
+          paths: dataPolygonLatLngApiBro,
           strokeColor: "#0033FF",
           strokeOpacity: 0.8,
           strokeWeight: 3,
@@ -77,27 +63,21 @@ const removePolygons = (bermudaTriangle: any) => {
     const places = searchBox.getPlaces();
     return axios
       .get(
-        `https://api.meeymap.com/map/v1/place-detail-by-id?placeId=${places[0].place_id}`
+        `http://192.168.1.26:8500/vmap/places/getpolygon?placeId=${places[0].place_id}`
       )
       .then((res: any) => {
-        if (res.data.data.polygons == null) {
-          return;
-        }
-
-        const dataPolygonPlaceId = res.data.data.polygons.rings.map(
-          (location: any) => {infoWindow
-            const data = location.map((item: any) => {
-              return {
-                lat: item[1],
-                lng: item[0],
-              };
-            });
-            return data;
-          }
-        );
+        const dataPolygonLatLngApiBro = res.data.data.coordinates.map((value: any) => {
+          const data = value.map((item: any) => {
+            return {
+              lat: item[1],
+              lng: item[0],
+            };
+          });
+          return data;
+        });
 
         var bermudaTriangle = new google.maps.Polygon({
-          paths: dataPolygonPlaceId,
+          paths: dataPolygonLatLngApiBro,
           strokeColor: "#0033FF",
           strokeOpacity: 0.8,
           strokeWeight: 3,
@@ -106,8 +86,6 @@ const removePolygons = (bermudaTriangle: any) => {
         });
         bermudaTriangle.setMap(map);
         removePolygons(bermudaTriangle);
-
-        // setDataSearch({ response: res.data });
       })
       .catch((error: any) => {
         throw error;

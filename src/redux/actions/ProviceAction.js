@@ -17,9 +17,9 @@ export const cityAction = () => {
       });
   };
 };
-export const districtAction = ({codeCity}) => {
+export const districtAction = ({cityID}) => {
   return (dispatch) => {
-    API.get(`http://192.168.1.26:8500/vcat/provinces/${codeCity}/districts`)
+    API.get(`http://192.168.1.26:8500/vcat/provinces/${cityID}/districts`)
       .then((data) => {
         const district = data;
         dispatch({type: DISTRICT_SET, payload: {district}});
@@ -29,12 +29,12 @@ export const districtAction = ({codeCity}) => {
       });
   };
 };
-export const wardAction = ({codeCity,codeDistrict }) => {
+export const wardAction = ({cityID,districtID }) => {
   return (dispatch) => {
-    API.get(`http://192.168.1.26:8500/vcat/provinces/${codeCity}/districts/${codeDistrict}/wards`)
+    API.get(`http://192.168.1.26:8500/vcat/provinces/${cityID}/districts/${districtID}/wards`)
       .then((data) => {
-        const places = data;
-        dispatch({type: WARD_SET, payload: {places}});
+        const ward= data;
+        dispatch({type: WARD_SET, payload: {ward}});
       })
       .catch((e) => {
         throw e;

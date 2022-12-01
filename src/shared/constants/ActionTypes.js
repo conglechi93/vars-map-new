@@ -146,3 +146,7 @@ export const   WARD_SET = "  WARD_SET";
 export const  CITY_SET_SELECT = " CITY_SET_SELECT"
 export const  DISTRICT_SET_SELECT= " DISTRICT_SET_SELECT";;
 export const   WARD_SET_SELECT = "  WARD_SET_SELECT";
+
+// API Land plot
+
+export const  LAND_PLOT = " LAND_PLOT"

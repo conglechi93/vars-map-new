@@ -1,8 +1,45 @@
 import Select from "react-select";
 import './style.css';
 import {CloseCircleOutlined} from '@ant-design/icons';
+import {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  setCityAction,
+  setDistrictAction,
+} from '../../redux/actions/InfoProvice';
 
 function LocationForm() {
+    const dispatch = useDispatch();
+    const cityOption = useSelector((state) => state.provice);
+
+    const districtOption = useSelector((state) => state.district);
+    
+  const [valueCity, setValueCity] = useState(null);
+
+  const [valueDistrict, setValueDistrict] = useState(null);
+
+  const [valueWard, setValueWard] = useState(null);
+  console.log("🚀 ~ file: locationForm.jsx ~ line 15 ~ LocationForm ~ valueWard", valueWard)
+  const wardOption = useSelector((state) => state.ward);
+
+    useEffect(() => {
+        dispatch(setCityAction(valueCity));
+      }, [valueCity]);
+    
+      useEffect(() => {
+        dispatch(setDistrictAction(valueDistrict));
+      }, [valueDistrict]);
+
+    const onChangeSelectCity = (e) => {
+        setValueCity(e.target.value);
+      };
+      const onChangeSelectDistrict = (e) => {
+        setValueDistrict(e.target.value);
+      };
+      const onChangeSelectWard = (e) => {
+        setValueWard(e.target.value);
+      };
+
     return (
         <div style={{width: '100%'}}>
         <div className='w-11/12 mx-auto mt-1 bg-gray-100 border-2 rounded md:w-2/3 sm:w-3/4 lg:w-1/2 xl:w-1/3 header_form_map'>
@@ -23,42 +60,48 @@ function LocationForm() {
         className="w-11/12 mx-auto mt-1 bg-gray-100 border-2 rounded md:w-2/3 sm:w-3/4 lg:w-1/2 xl:w-1/3 form_place"
       >
         <div className="flex flex-col gap-5 form_search">
-          <Select
-            name="cityId"
-            className="select_form_search"
-            // key={`cityId_${selectedCity?.value}`}
-            // isDisabled={cityOptions.length === 0}
-            // options={cityOptions}
-            // onChange={(option) => {
-            //   onCitySelect(option);
-            // }}
-            // placeholder="Tỉnh/Thành"
-            // defaultValue={selectedCity}
-          />
-  
-          <Select
-            name="districtId"
-            className="select_form_search"
-            // key={`districtId_${selectedDistrict?.value}`}
-            // isDisabled={districtOptions.length === 0}
-            // options={districtOptions}
-            // onChange={(option) => {
-            //   onDistrictSelect(option);
-            // }}
-            // placeholder="Quận/Huyện"
-            // defaultValue={selectedDistrict}
-          />
-  
-          <Select
-            name="wardId"
-            className="select_form_search"
-            // key={`wardId_${selectedWard?.value}`}
-            // isDisabled={wardOptions.length === 0}
-            // options={wardOptions}
-            // placeholder="Phường/Xã"
-            // onChange={(option) => onWardSelect(option)}
-            // defaultValue={selectedWard}
-          />
+          <select
+                      className='input_tothua'
+                      onChange={onChangeSelectCity}>
+                      <option>Tỉnh/Thành</option>
+                      {cityOption.map((item) => {
+                        return (
+                          <option key={item.id} value={item.id}>
+                            {item.name}
+                          </option>
+                        );
+                      })}
+                    </select>
+                    <select
+                      className='input_tothua'
+                      onChange={onChangeSelectDistrict}>
+                      <option>Quận/Huyện</option>
+
+                      {valueCity != null &&
+                        districtOption != null &&
+                        districtOption.map((item) => {
+                          return (
+                            <option key={item.id} value={item.id}>
+                              {item.name}
+                            </option>
+                          );
+                        })}
+                    </select>
+                    <select
+                      className='input_tothua'
+                      onChange={onChangeSelectWard}>
+                      <option>Phường/Xã</option>
+                      {valueCity != null &&
+                        valueDistrict != null &&
+                        wardOption != null &&
+                        wardOption.map((item) => {
+                          return (
+                            <option key={item.id} value={item.id}>
+                              {item.name}
+                            </option>
+                          );
+                        })}
+                    </select>
           <Select
             name="projectId"
             className="select_form_search"

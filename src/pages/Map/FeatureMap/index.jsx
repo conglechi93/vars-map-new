@@ -17,18 +17,18 @@ import {useEffect} from 'react';
 
 const HeaderMap = () => {
   const dispatch = useDispatch();
-   const codeCity = useSelector((state)=> state.proviceSelect)
-   const codeDistrict= useSelector((state)=> state.districtSelect)
+   const cityID = useSelector((state)=> state.proviceSelect)
+   const districtID= useSelector((state)=> state.districtSelect)
 
   useEffect(() => {
     dispatch(cityAction());
   }, []);
   useEffect(() => {
-    dispatch(districtAction({codeCity}))
-  }, [codeCity]);
+    dispatch(districtAction({cityID}))
+  }, [cityID]);
   useEffect(() => {
-    dispatch(wardAction({codeCity,codeDistrict}))
-  }, [codeDistrict]);
+    dispatch(wardAction({cityID,districtID}))
+  }, [districtID]);
 
   const placeForm = () => {
     return <PlaceForm className='drop_tothua'></PlaceForm>;
@@ -148,6 +148,8 @@ const HeaderMap = () => {
                     className='dropdown_khuvuc'
                     overlay={item.component}
                     trigger='click'
+                    // open={false}
+                    // onOpenChange={setIsOpen(true)}
                     key={item.id}>
                     <img
                       key={item.id}

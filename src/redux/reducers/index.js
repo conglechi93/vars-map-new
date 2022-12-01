@@ -16,7 +16,8 @@ import proviceReducer from './PlaceFormMapReducer';
 import proviceSelectReducer from './ProviceFormSelectReducer';
 import districtReducer from './DistrictReducer';
 import wardReducer from './WardReducer';
-import districtSelectReducer from './DistrictSelectReducer'
+import districtSelectReducer from './DistrictSelectReducer';
+import landPlotReducer from './LandPlotReducer'
 
 const persistConfig = {
   key: 'default',
@@ -60,6 +61,7 @@ const reducers = (history) =>
     district: districtReducer,
     ward: wardReducer,
     proviceSelect: proviceSelectReducer,
-    districtSelect: districtSelectReducer
+    districtSelect: districtSelectReducer,
+    landPlot: landPlotReducer
   });
 export default reducers;
