@@ -14,11 +14,16 @@ import LayerMap from 'components/FormMap/layerMap';
 import {useDispatch,useSelector} from 'react-redux';
 import {cityAction,districtAction,wardAction} from 'redux/actions/ProviceAction';
 import {useEffect} from 'react';
+import { LAYER } from 'shared/constants/layer';
+// import { layerAction } from 'redux/actions/layerAction';
 
 const HeaderMap = () => {
   const dispatch = useDispatch();
    const cityID = useSelector((state)=> state.proviceSelect)
-   const districtID= useSelector((state)=> state.districtSelect)
+   const districtID = useSelector((state)=> state.districtSelect)
+   const layer = useSelector((state)=> state.layer)
+   const plainOptions = LAYER.map((layer) => layer.tile_id);
+
 
   useEffect(() => {
     dispatch(cityAction());
@@ -29,6 +34,47 @@ const HeaderMap = () => {
   useEffect(() => {
     dispatch(wardAction({cityID,districtID}))
   }, [districtID]);
+
+  // Layer
+  useEffect(() => {
+    let layers = LAYER;
+    let imagerylayer = [];
+    window.map.overlayMapTypes.clear();
+    for (let i = 0; i < layers.length; i++) {
+      if (layer.layer.includes(layers[i].tile_id)) {
+        let path = layers[i].tile_location;
+        var tname = layers[i].tile_alias;
+        var min = layers[i].min_zoom;
+        var max = layers[i].max_zoom;
+        imagerylayer[i] = new google.maps.ImageMapType({
+          name: tname,
+          getTileUrl: function (coord, zoom) {
+            var url = path
+              .replace("{x}", coord.x)
+              .replace("{y}", coord.y)
+              .replace("{z}", zoom);
+            return url;
+          },
+          tileSize: new google.maps.Size(256, 256),
+          minZoom: min,
+          maxZoom: max,
+          zoom: 11,
+          opacity: 0.4,
+        });
+      }
+      window.map.overlayMapTypes.push(imagerylayer[i]);
+    }
+  }, [layer]);
+  
+  const changeOpacity = (value) => {
+    for (let i = 0; i < plainOptions.length; i++) {
+      if (layer.layer.includes(plainOptions[i])) {
+        window.map.overlayMapTypes.getAt(i).setOpacity(value / 100);
+      }
+    }
+  };
+
+  
 
   const placeForm = () => {
     return <PlaceForm className='drop_tothua'></PlaceForm>;
@@ -170,7 +216,7 @@ const HeaderMap = () => {
               <Slider
                 style={{width: '100%'}}
                 trackStyle={{background: '#D1132A'}}
-                //   onChange={changeOpacity}
+                  onChange={changeOpacity}
                 defaultValue={30}
               />
             </div>

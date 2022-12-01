@@ -150,3 +150,6 @@ export const   WARD_SET_SELECT = "  WARD_SET_SELECT";
 // API Land plot
 
 export const  LAND_PLOT = " LAND_PLOT"
+
+// Layer
+export const LAYER_SET = "LAYER_SET";
