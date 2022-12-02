@@ -112,6 +112,7 @@ color: white;
   }
   .are_form_map{
     display: flex;
+    flex-direction: column;
   }
 
   .popup-box {

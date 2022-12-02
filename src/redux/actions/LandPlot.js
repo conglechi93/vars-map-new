@@ -14,7 +14,8 @@ export const landPlotAction = ({valueInputSoTo,valueInputSoThua,valueCity,valueD
         if (window.bermuda) {
             window.bermuda.setMap(null);
         }
-        if(landPlot!=null) {
+        console.log("🚀 ~ file: LandPlot.js ~ line 18 ~ .then ~ landPlot.coordinates", landPlot.coordinates)
+        if(landPlot!=null && landPlot.coordinates !=null) {
               const polygon = landPlot.coordinates.map((item) => {
                 const data = item.map((location) => {
                   return {
@@ -26,11 +27,10 @@ export const landPlotAction = ({valueInputSoTo,valueInputSoThua,valueCity,valueD
                 map.setCenter({lat: item[0][0], lng: item[0][1]});
                 return data;
               });
-              console.log("🚀 ~ file: LandPlot.js ~ line 29 ~ polygon ~ polygon ", polygon[0][0] )
+              console.log("🚀 ~ file: LandPlot.js ~ line 29 ~ polygon ~ polygon ", polygon )
               
              
                 window.bermuda = new google.maps.Polygon({
-                  // label: landPlot.dientich + landPlot.donvitinh,
                   paths: polygon,
                   strokeColor: 'blue',
                   strokeOpacity: 0.8,
@@ -38,7 +38,10 @@ export const landPlotAction = ({valueInputSoTo,valueInputSoThua,valueCity,valueD
                   fillColor: '#3e32a8',
                   fillOpacity: 0.2,
                 });
+                console.log("🚀 ~ file: LandPlot.js ~ line 41 ~ .then ~ window.bermuda", window.bermuda)
+
                 let Markers=[]
+                
                 var marker = new google.maps.Marker({
                   position: polygon[0][0],
                   map: map,

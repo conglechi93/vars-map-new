@@ -32,12 +32,14 @@ const removePolygons = (bermudaTriangle: any) => {
         const dataPolygonLatLngApiBro = res.data.data.coordinates.map((value: any) => {
           const data = value.map((item: any) => {
             return {
-              lat: item[1],
-              lng: item[0],
+              lat: item[0],
+              lng: item[1],
             };
           });
+        
           return data;
         });
+        
 
         var bermudaTriangle = new google.maps.Polygon({
           paths: dataPolygonLatLngApiBro,
@@ -48,6 +50,7 @@ const removePolygons = (bermudaTriangle: any) => {
           fillOpacity: 0,
           
         });
+        console.log("🚀 ~ file: search.tsx ~ line 51 ~ .then ~ bermudaTriangle", bermudaTriangle)
         bermudaTriangle.setMap(map);
         removePolygons(bermudaTriangle);
 
@@ -68,10 +71,11 @@ const removePolygons = (bermudaTriangle: any) => {
         const dataPolygonLatLngApiBro = res.data.data.coordinates.map((value: any) => {
           const data = value.map((item: any) => {
             return {
-              lat: item[1],
-              lng: item[0],
+              lat: item[0],
+              lng: item[1],
             };
           });
+          console.log("🚀 ~ file: search.tsx ~ line 78 ~ data ~ data", data)
           return data;
         });
         console.log("🚀 ~ file: search.tsx ~ line 78 ~ dataPolygonLatLngApiBro ~ dataPolygonLatLngApiBro", dataPolygonLatLngApiBro)
@@ -87,7 +91,7 @@ const removePolygons = (bermudaTriangle: any) => {
         console.log("🚀 ~ file: search.tsx ~ line 87 ~ .then ~ bermudaTriangle", bermudaTriangle)
       
         bermudaTriangle.setMap(map);
-        removePolygons(bermudaTriangle);
+        // removePolygons(bermudaTriangle);
       })
       .catch((error: any) => {
         throw error;
