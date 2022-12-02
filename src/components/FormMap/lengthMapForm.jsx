@@ -2,7 +2,7 @@ import {CloseCircleOutlined} from '@ant-design/icons';
 
 function LengthMapForm() {
   return (
-    <div style={{width: '100%'}}>
+    <div style={{width: '120%'}}>
       <div className='w-11/12 mx-auto mt-1 bg-gray-100 border-2 rounded md:w-2/3 sm:w-3/4 lg:w-1/2 xl:w-1/3 header_form_map'>
         <img
           className='icon_form_map'
@@ -15,7 +15,7 @@ function LengthMapForm() {
       <div className='form_place_angular'>
         <div className='are_form_map'>
           <label htmlFor=''>Đơn vị đo</label>
-          <input></input>
+          <input/>
           {/* <select name='' id=''></select> */}
         </div>
         <div className='are_form_map'>

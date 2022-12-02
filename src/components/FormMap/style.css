@@ -191,6 +191,12 @@ color: white;
     position: absolute;
     left: -17px;
   }
+  .getLatLng{
+    width: 330px;
+    outline: none;
+    border: none;
+  }
+ 
   @media only screen and (max-width: 1065px) {
     .ant-dropdown-placement-bottomLeft {
       min-width: 100px !important;

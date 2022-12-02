@@ -43,7 +43,7 @@
   padding: 7px 0px 7px 0px;
 }
 .Checkbox_all {
-  width: 525px;
+  /* width: 525px; */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,8 @@
   border-radius: 5px;
   height: 116px;
   padding: 10px;
-  width: 753px;
+  /* width: 753px; */
+  position: relative;
 }
 .lable_lqh {
   display: flex;
@@ -148,6 +149,7 @@
   }
   .icon_header{
     padding: 7px;
+    
 
   }
   .buttom_header{
@@ -164,3 +166,42 @@
     width: 40%;
     padding-top: 7px;
   }
+  .Menu_dropdown{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    /* width: 100%; */
+  }
+  .Menu_all{
+    position: relative;
+
+  }
+  @media only screen and (max-width: 768px) {
+    .Checkbox_all {
+      /* width: 525px; */
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      position: absolute;
+      z-index: 9;
+      top: 70px;
+      margin-right: 50px
+    
+    }
+  }
+  @media only screen and (max-width: 305px) {
+    .Checkbox_all {
+      /* width: 525px; */
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      position: absolute;
+      z-index: 9;
+      top: 70px;
+      margin-right: 50px
+   
+    }
+  }
+  

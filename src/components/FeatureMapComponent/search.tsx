@@ -1,10 +1,8 @@
 import { toast } from "react-toastify";
-// import "./index.css";
 import axios from "axios";
 import markerCustom from './markerCustom'
 
 const searchBoxCustom = (setDataSearchPlaces:any,map: any) => {
-  // console.log("🚀 ~ file: search.tsx ~ line 8 ~ searchBoxCustom ~ isDisplay", isDisplay)
   const input = document.getElementById("pac-input") as HTMLInputElement;
     const searchBox = new google.maps.places.SearchBox(input);
     // let markers: google.maps.Marker[] = [];
@@ -48,6 +46,7 @@ const removePolygons = (bermudaTriangle: any) => {
           strokeWeight: 3,
           fillColor: "#0033FF",
           fillOpacity: 0,
+          
         });
         bermudaTriangle.setMap(map);
         removePolygons(bermudaTriangle);
@@ -75,6 +74,7 @@ const removePolygons = (bermudaTriangle: any) => {
           });
           return data;
         });
+        console.log("🚀 ~ file: search.tsx ~ line 78 ~ dataPolygonLatLngApiBro ~ dataPolygonLatLngApiBro", dataPolygonLatLngApiBro)
 
         var bermudaTriangle = new google.maps.Polygon({
           paths: dataPolygonLatLngApiBro,
@@ -84,6 +84,8 @@ const removePolygons = (bermudaTriangle: any) => {
           fillColor: "#0033FF",
           fillOpacity: 0,
         });
+        console.log("🚀 ~ file: search.tsx ~ line 87 ~ .then ~ bermudaTriangle", bermudaTriangle)
+      
         bermudaTriangle.setMap(map);
         removePolygons(bermudaTriangle);
       })

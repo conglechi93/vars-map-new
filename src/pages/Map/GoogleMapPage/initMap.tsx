@@ -1,5 +1,7 @@
 import locationUser from "../LocationUser";
 import searchBoxCustom from "components/FeatureMapComponent/search";
+import lengthMarkerMap from '../FeatureMap/lengthMarkerMap';
+import getLatLng from "../FeatureMap/getLatLng";
 const initMap = (setDataSearchPlaces: any) => {
     var zoomLevel = 15;
     var map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
@@ -14,14 +16,16 @@ const initMap = (setDataSearchPlaces: any) => {
       mapId: "90f87356969d889c",
       fullscreenControl: false,
     });
-    map.addListener("click", (e:any) => {
+    // map.addListener("click", (e:any) => {
       
-      let outPutLatLang = document.getElementById('length') as HTMLInputElement
-      outPutLatLang = e.latLng.lat() && e.latLng.lng()
-      console.log("🚀 ~ file: initMap.tsx ~ line 21 ~ map.addListener ~ outPutLatLang.value", outPutLatLang)
-    })
+    //   let outPutLatLang = document.getElementById('length') as HTMLInputElement
+    //   outPutLatLang = e.latLng.lat() && e.latLng.lng()
+    //   console.log("🚀 ~ file: initMap.tsx ~ line 21 ~ map.addListener ~ outPutLatLang.value", outPutLatLang)
+    // })
+    getLatLng(map)
     locationUser(map)
     searchBoxCustom(setDataSearchPlaces, map);
+    lengthMarkerMap(map)
 
 
     

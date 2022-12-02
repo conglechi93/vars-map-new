@@ -10,7 +10,7 @@ import './style.css';
 // import ValidateLandPlot from '../ValidateFormMap/ValidateFormLandPlot';
 // import useMarkerLandPlot from '../Marker/markerLandPlot'
 
-function PlaceForm() {
+function PlaceForm(setIsOpen) {
   const dispatch = useDispatch();
   // const [isOpen,setIsOpen] = useState(false)
   // var map = window.map;
@@ -188,8 +188,7 @@ function PlaceForm() {
     // polygonLandPlot();
   };
   return (
-    <>
-  
+    <div>
       {
         <div style={{width: '100%'}}>
           {
@@ -204,7 +203,7 @@ function PlaceForm() {
                 <div className='title_form_map'>Tìm kiếm theo tờ thửa</div>
                 <CloseCircleOutlined
                   className='icon_close_form_map'
-                  // onClick={() => setIsOpen(true)}
+                  onClick={() => setIsOpen(true)}
                 />
               </div>
 
@@ -289,15 +288,8 @@ function PlaceForm() {
           }
         </div>
       }
-      <ValidateLandPlot
-        // isModalOpen={isModalOpen}
-        // setIsModalOpen={setIsModalOpen()}
-        // isModalOpenToThua={isModalOpenToThua}
-        // setIsModalOpenToThua={setIsModalOpenToThua()}
-        // isModalOpenAll={isModalOpenAll}
-        // setIsModalOpenAll={setIsModalOpenAll()}
-      />
-    </>
+      <ValidateLandPlot/>
+    </div>
   );
 }
 

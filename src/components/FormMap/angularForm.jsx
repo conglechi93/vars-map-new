@@ -19,7 +19,7 @@ function AngularForm() {
     };
 
   return (
-    <div style={{width: '50%'}}>
+    <div style={{width: '160%'}}>
       <div className='w-11/12 mx-auto mt-1 bg-gray-100 border-2 rounded md:w-2/3 sm:w-3/4 lg:w-1/2 xl:w-1/3 header_form_map'>
         <img
           className='icon_form_map'
